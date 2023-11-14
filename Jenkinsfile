@@ -65,7 +65,7 @@ pipeline {
 		}
 		stage(" Trivy Image Scanning "){
 			steps{
-				sh ('docker run aquasec/trivy image tchounke/register-app-pipeline:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table')
+				sh ('docker run aquasec/trivy image tchounke/tom-cont:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table')
 			}
 		}
 		stage ('Cleanup Artifacts') {
